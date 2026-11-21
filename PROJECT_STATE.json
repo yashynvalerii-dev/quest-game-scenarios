@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "project": "Quest Game — Scenario Department",
+  "updated": "2026-11-21",
+  "status": "initialized",
+  "repos": {
+    "public": "yashynvalerii-dev/quest-game-scenarios",
+    "private": "yashynvalerii-dev/quest-game-scenarios-private"
+  },
+  "roles": {
+    "owner": "approves scope and decisions",
+    "scenarioDepartment": "scenario design, validation, Node-RED mentorship and documentation",
+    "leadDeveloper": "Claude; technical protocol not yet agreed"
+  },
+  "prototype": {
+    "nodeRed": "5.0.10",
+    "worldmap": "5.9.2",
+    "brokerExampleId": "way/34294737",
+    "confirmed": [
+      "Broker object polygons rendered in Worldmap",
+      "HTTP selection by brokerId",
+      "Node-RED flow produced quest.task.activate in Debug"
+    ],
+    "notConfirmed": [
+      "automatic native GeoJSON click ID event",
+      "GPS geofence runtime",
+      "Quest Game engine export contract"
+    ]
+  },
+  "openTasks": [
+    "Agree cross-team event/schema contract with lead developer",
+    "Write first reviewed scenario",
+    "Standardize object refs and game zone IDs",
+    "Design safe flow export and validator",
+    "Archive Node-RED tested flow JSON after owner provides/approves exact artifact"
+  ],
+  "lastDecision": "D-001",
+  "nextStep": "Start proposing gameplay ideas; validate and document approved scenario."
+}
