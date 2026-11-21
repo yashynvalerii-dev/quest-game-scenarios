@@ -10,7 +10,7 @@
   "roles": {
     "owner": "approves scope and decisions",
     "scenarioDepartment": "scenario design, validation, Node-RED mentorship and documentation",
-    "leadDeveloper": "Claude; technical protocol not yet agreed"
+    "leadDeveloper": "Claude; introductory corporate letter sent, reply pending"
   },
   "prototype": {
     "nodeRed": "5.0.10",
@@ -28,12 +28,22 @@
     ]
   },
   "openTasks": [
-    "Agree cross-team event/schema contract with lead developer",
+    "Wait for lead developer reply and agree schema and delivery",
+    "Agree validation and synthetic laboratory test matrix",
+    "Specify safe in-game scenario hot-editing and active player behavior",
     "Write first reviewed scenario",
-    "Standardize object refs and game zone IDs",
-    "Design safe flow export and validator",
-    "Archive Node-RED tested flow JSON after owner provides/approves exact artifact"
+    "Archive Node-RED tested flow JSON after exact export"
   ],
   "lastDecision": "D-001",
-  "nextStep": "Start proposing gameplay ideas; validate and document approved scenario."
+  "nextStep": "Review reply in dev-hub/inbox/quest-game-scenarios.md and coordinate first end-to-end contract test",
+  "ownerDecisions": {
+    "mobileEditor": "simple scenarios for non-programmers; create and modify quests in field on phone, including during game",
+    "developmentCompatibility": "backward compatibility of old scenario versions not required during design/development; old test scenarios may be deleted"
+  },
+  "communication": {
+    "corporateHub": "yashynvalerii-dev/dev-hub",
+    "senderId": "quest-game-scenarios",
+    "sentMessage": "20261121-1058-quest-game-scenarios-to-quest-game-scenario-editor-coordination",
+    "response": "pending"
+  }
 }
