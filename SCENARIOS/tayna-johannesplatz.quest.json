@@ -1,0 +1,163 @@
+{
+  "format": "quest-game/scenario",
+  "formatVersion": 2,
+  "id": "tayna-johannesplatz",
+  "title": "Тайна Йоханнес-плац",
+  "status": "draft",
+  "settings": {
+    "mode": "event",
+    "scoring": "fixed",
+    "contact": "Организатор: чат игры"
+  },
+  "vars": [
+    {
+      "id": "path",
+      "kind": "flag",
+      "initial": null
+    }
+  ],
+  "start": "t1",
+  "nodes": [
+    {
+      "id": "t1",
+      "type": "task",
+      "title": "Загадочное послание",
+      "text": "Начните расследование: найдите отмеченную на карте точку и подтвердите прибытие.",
+      "show": {
+        "mode": "map-point"
+      },
+      "checks": {
+        "need": "all",
+        "list": [
+          {
+            "kind": "gps",
+            "confirm": "Я на месте"
+          }
+        ]
+      },
+      "points": {
+        "base": 10
+      },
+      "hints": [
+        {
+          "cost": 2,
+          "text": "Ищите отметку первого задания на карте."
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "id": "c1",
+      "type": "choice",
+      "title": "Два пути",
+      "text": "Как вы продолжите расследование?",
+      "options": [
+        "t2",
+        "t3"
+      ]
+    },
+    {
+      "id": "t2",
+      "type": "task",
+      "title": "Шифр исследователя",
+      "text": "Разгадайте пароль: название площади из названия квеста латиницей, без пробелов.",
+      "show": {
+        "mode": "text"
+      },
+      "checks": {
+        "need": "all",
+        "list": [
+          {
+            "kind": "code",
+            "value": "Johannesplatz"
+          }
+        ]
+      },
+      "points": {
+        "base": 15
+      },
+      "hints": [
+        {
+          "cost": 3,
+          "text": "Нужно немецкое название площади."
+        },
+        {
+          "cost": 5,
+          "text": "Код: Johannesplatz"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "id": "t3",
+      "type": "task",
+      "title": "След наблюдателя",
+      "text": "Посетите контрольную точку на карте и отметьтесь.",
+      "show": {
+        "mode": "map-point"
+      },
+      "checks": {
+        "need": "all",
+        "list": [
+          {
+            "kind": "gps",
+            "confirm": "Точка найдена"
+          }
+        ]
+      },
+      "points": {
+        "base": 5
+      },
+      "hints": [
+        {
+          "cost": 2,
+          "text": "Посмотрите на отметку контрольной точки на карте."
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "id": "endGood",
+      "type": "finish",
+      "text": "Вы нашли пароль и раскрыли тайну Йоханнес-плац!"
+    },
+    {
+      "id": "endBad",
+      "type": "finish",
+      "text": "Вы прошли маршрут наблюдателя. Тайна осталась нераскрытой — попробуйте путь исследователя в следующий раз."
+    }
+  ],
+  "edges": [
+    {
+      "from": "t1",
+      "to": "c1"
+    },
+    {
+      "from": "c1",
+      "to": "t2",
+      "do": {
+        "set": {
+          "path": "researcher"
+        }
+      }
+    },
+    {
+      "from": "c1",
+      "to": "t3",
+      "do": {
+        "set": {
+          "path": "observer"
+        }
+      }
+    },
+    {
+      "from": "t2",
+      "to": "endGood"
+    },
+    {
+      "from": "t3",
+      "to": "endBad"
+    }
+  ],
+  "participants": []
+}
