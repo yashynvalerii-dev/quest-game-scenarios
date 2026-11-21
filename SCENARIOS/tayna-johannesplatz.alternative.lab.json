@@ -1,0 +1,65 @@
+{
+  "format": "quest-game/lab-run",
+  "version": 1,
+  "quest": "tayna-johannesplatz",
+  "players": [
+    "p1"
+  ],
+  "title": "Тайна Йоханнес-плац — альтернативная концовка",
+  "steps": [
+    {
+      "player": "p1",
+      "do": "start"
+    },
+    {
+      "player": "p1",
+      "do": "at",
+      "node": "t1"
+    },
+    {
+      "player": "p1",
+      "do": "confirm",
+      "node": "t1"
+    },
+    {
+      "player": "p1",
+      "do": "choose",
+      "node": "c1",
+      "option": "t3"
+    },
+    {
+      "player": "p1",
+      "expect": {
+        "open": [
+          "t3"
+        ],
+        "closed": [
+          "t2"
+        ],
+        "vars": {
+          "path": "observer"
+        }
+      }
+    },
+    {
+      "player": "p1",
+      "do": "at",
+      "node": "t3"
+    },
+    {
+      "player": "p1",
+      "do": "confirm",
+      "node": "t3"
+    },
+    {
+      "player": "p1",
+      "expect": {
+        "done": [
+          "t3"
+        ],
+        "finished": "endBad",
+        "points": 15
+      }
+    }
+  ]
+}
