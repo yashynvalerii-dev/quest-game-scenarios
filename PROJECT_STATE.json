@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "project": "Quest Game — Scenario Department",
-  "updated": "2026-11-21",
-  "status": "initialized",
+  "updated": "2026-11-28",
+  "status": "scenario-lab-integration-tests",
   "repos": {
     "public": "yashynvalerii-dev/quest-game-scenarios",
     "private": "yashynvalerii-dev/quest-game-scenarios-private"
@@ -10,7 +10,7 @@
   "roles": {
     "owner": "approves scope and decisions",
     "scenarioDepartment": "scenario design, validation, Node-RED mentorship and documentation",
-    "leadDeveloper": "Claude; introductory corporate letter sent, reply pending"
+    "leadDeveloper": "Claude — owns main Quest Game runtime and Node-RED conversion/validation; corporate correspondence and technical contracts are read-only to scenario department"
   },
   "prototype": {
     "nodeRed": "5.0.10",
@@ -28,14 +28,14 @@
     ]
   },
   "openTasks": [
-    "Wait for lead developer reply and agree schema and delivery",
-    "Agree validation and synthetic laboratory test matrix",
-    "Specify safe in-game scenario hot-editing and active player behavior",
-    "Write first reviewed scenario",
-    "Archive Node-RED tested flow JSON after exact export"
+    "Test shared-target qg-choice edge case and preserve lab evidence",
+    "Discuss choice label behavior only after contract comparison",
+    "Progressive money effects test (buy 0 / decline 100) after baseline",
+    "Keep ENGINE_REQUIREMENTS.md and TESTS/README.md in sync with lab tests",
+    "Coordinate confirmed engine-contract mismatches with lead developer in one concise dev-hub letter"
   ],
   "lastDecision": "D-001",
-  "nextStep": "Review reply in dev-hub/inbox/quest-game-scenarios.md and coordinate first end-to-end contract test",
+  "nextStep": "Node-RED: both qg-choice outputs to one qg-finish; Deploy → import and verify laboratory; no new block before this check",
   "ownerDecisions": {
     "mobileEditor": "simple scenarios for non-programmers; create and modify quests in field on phone, including during game",
     "developmentCompatibility": "backward compatibility of old scenario versions not required during design/development; old test scenarios may be deleted"
@@ -44,6 +44,28 @@
     "corporateHub": "yashynvalerii-dev/dev-hub",
     "senderId": "quest-game-scenarios",
     "sentMessage": "20261121-1058-quest-game-scenarios-to-quest-game-scenario-editor-coordination",
-    "response": "pending"
+    "response": "Corporate messages exchanged; inspect dev-hub inbox for latest, not a permanently pending flag",
+    "documentFirstReceived": "20261128-1206-stalker-gps-scenarios-to-quest-game-scenarios-document-first-workflow",
+    "engineRegistry": "ENGINE_REQUIREMENTS.md"
+  },
+  "currentTest": {
+    "questId": "logic-test-01",
+    "title": "Риск или победа",
+    "nodeRedTab": "08 Quest Game Logic Test",
+    "lastVerifiedSnapshotUTC": "2026-11-26T18:40:57.428373+00:00",
+    "confirmed": [
+      "Quest qg-quest initializes counter money=100 in exported Node-RED configuration",
+      "Quest with no qg-task was rejected by lab: Add at least one task",
+      "qg-quest → qg-task → qg-finish accepted by lab: one task, two steps, one edge",
+      "Virtual lab GPS+confirm task can advance to a choice",
+      "Choice with two distinct finish targets led to both finish screens in separate runs"
+    ],
+    "open": [
+      "Reproduce issue with two choice outputs to same finish (not yet confirmed)",
+      "Check choice button label f1/f2 vs configured labels",
+      "Test action money -= 100 and variable persistence in both branches"
+    ],
+    "notes": "The qg-task still had GPS enabled; score 0 is not evidence of money=0. Never claim physical GPS or money actions verified.",
+    "evidence": "https://github.com/yashynvalerii-dev/quest-game-scenarios-private/blob/main/DIAGNOSTICS/node-red-full.json"
   }
 }
