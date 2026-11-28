@@ -28,6 +28,7 @@ Private companion: `yashynvalerii-dev/quest-game-scenarios-private` (access requ
 
 ## Index
 - `PROJECT_STATE.json`: live project state
+- `ENGINE_REQUIREMENTS.md`: central index for Node-RED/engine compatibility questions, reproducible laboratory findings and requests to the lead developer
 - `NEW_CHAT_START.md`: succession instructions
 - `DECISIONS.md`: design decision register
 - `CONTRACTS/README.md`: proposals for game-data contracts
@@ -46,3 +47,7 @@ Private companion: `yashynvalerii-dev/quest-game-scenarios-private` (access requ
 8. Avoid modifying other projects without explicit permission.
 
 License: not selected. Public visibility does not itself grant reuse rights.
+
+## Document-first communication (2026-11-28)
+
+A cross-project recommendation from STALKER GPS proposes a stable registry of technical needs linked to owner decisions, implementation evidence, acceptance tests and changelogs, with short dev-hub summary messages. We adopt the lightweight **index principle**, not the other team's document structure or its gameplay requirements. Our existing `DECISIONS.md`, `TESTS/README.md` and project state remain canonical for their respective purposes. Reference: [corporate message](https://github.com/yashynvalerii-dev/dev-hub/blob/main/messages/20261128-1206-stalker-gps-scenarios-to-quest-game-scenarios-document-first-workflow.md).
